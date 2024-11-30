@@ -85,13 +85,43 @@ export default function Home() {
           ))}
         </motion.div>
         <motion.div
-          className={`flex text-4xl justify-center  mt-12  ${lancelot.className} uppercase`}
+          className={`flex text-4xl justify-center mt-12 ${lancelot.className} uppercase`}
         >
           <Link
             href="/explore"
-            className=" hover:text-primary transition-colors duration-300 justify-center flex nav-link"
+            className="hover:text-primary transition-colors duration-300 justify-center flex nav-link"
           >
             BROWSE THE COLLECTION
+          </Link>
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div className="flex justify-center space-x-6 mt-8">
+          <Link
+            href="https://twitter.com"
+            target="_blank"
+            className="opacity-50 hover:opacity-100 transition-opacity"
+          >
+            <Image
+              src="/x-logo.png"
+              alt="Twitter"
+              width={24}
+              height={24}
+              className="invert"
+            />
+          </Link>
+          <Link
+            href="https://telegram.org"
+            target="_blank"
+            className="opacity-50 hover:opacity-100 transition-opacity"
+          >
+            <Image
+              src="/tg-logo.png"
+              alt="Telegram"
+              width={24}
+              height={24}
+              className="invert"
+            />
           </Link>
         </motion.div>
       </main>

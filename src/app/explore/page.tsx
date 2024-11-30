@@ -3,15 +3,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { lancelot } from '../fonts';
-import niqady from '../../../public/niqady.png';
 import { useInView } from 'react-intersection-observer';
 import Navbar from '../Navbar';
 
-// Simulate a larger collection
+// Function to generate the correct image path
+const getImagePath = (index: number) => `/niqadys/niqady${index + 1}.jpg`;
+
+// Simulate a larger collection with actual image paths
 const generateNFTs = () => {
   return Array.from({ length: 1111 }, (_, i) => ({
     id: i + 1,
-    image: niqady,
+    imagePath: getImagePath(i),
   }));
 };
 
@@ -103,11 +105,12 @@ export default function ExplorePage() {
             <motion.div key={nft.id} variants={item} className="cursor-pointer">
               <div className="relative group">
                 <Image
-                  src={nft.image}
+                  src={nft.imagePath}
                   alt={`Niqady #${nft.id}`}
-                  className="aspect-square opacity-50  hover:opacity-100 w-full rounded shadow-sm transition-all duration-[0.2s] ease-linear group-hover:translate-y-[-5px]"
+                  width={500}
+                  height={500}
+                  className="aspect-square opacity-50 hover:opacity-100 w-full rounded shadow-sm transition-all duration-[0.2s] ease-linear group-hover:translate-y-[-5px]"
                 />
-
                 <p
                   className={`${lancelot.className} text-primary text-xl mt-2`}
                 >
@@ -118,7 +121,6 @@ export default function ExplorePage() {
           ))}
         </motion.div>
 
-        {/* Intersection Observer target */}
         <div ref={ref} className="h-10 mt-8" />
       </div>
     </div>
