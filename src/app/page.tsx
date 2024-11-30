@@ -56,7 +56,7 @@ export default function Home() {
         className="absolute bottom-0 right-0 bloom-animation bloom-delay-2 w-[140px] h-[220px]"
       />
       <Navbar />
-      <main className="relative z-20 container mx-auto px-6 w-full flex flex-col items-center">
+      <main className="relative z container mx-auto px-6 w-full flex flex-col items-center">
         <Image src={'/logo.png'} alt="logo" width={100} height={100} />
         <h1
           className={`${lancelot.className} text-7xl text-center w-full lg:text-8xl text-primary uppercase mt-20`}
@@ -88,7 +88,7 @@ export default function Home() {
           className={`flex text-4xl justify-center  mt-12  ${lancelot.className} uppercase`}
         >
           <Link
-            href="/collection"
+            href="/explore"
             className=" hover:text-primary transition-colors duration-300 justify-center flex nav-link"
           >
             BROWSE THE COLLECTION
