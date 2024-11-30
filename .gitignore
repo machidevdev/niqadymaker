@@ -38,3 +38,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Upload scripts and metadata
+upload-to-cloudinary.js
+upload-to-ipfs.js
+rename-images.js
+collection-metadata.json
+
+# NFT Collection images
+public/niqadys/

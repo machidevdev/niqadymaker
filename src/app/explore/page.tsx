@@ -6,8 +6,12 @@ import { lancelot } from '../fonts';
 import { useInView } from 'react-intersection-observer';
 import Navbar from '../Navbar';
 
+const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '';
 // Function to generate the correct image path
-const getImagePath = (index: number) => `/niqadys/niqady${index + 1}.jpg`;
+const getImagePath = (index: number) =>
+  `https://res.cloudinary.com/${cloudName}/image/upload/niqady-collection/niqady${
+    index + 1
+  }`;
 
 // Simulate a larger collection with actual image paths
 const generateNFTs = () => {
