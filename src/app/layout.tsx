@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Navbar from './Navbar';
+import { usePathname } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Niqady Maker',
@@ -28,14 +29,14 @@ export default function RootLayout({
             alt="flower-top"
             width={265}
             height={383}
-            className="absolute top-4 left-0 bloom-animation bloom-delay-1 w-[132px] h-[191px] opacity-70"
+            className={`absolute top-4 -left-4 bloom-animation bloom-delay-1 w-[132px] h-[191px] opacity-70 ${'hidden md:block'}`}
           />
           <Image
             src={'/flower-bot.png'}
             alt="flower-bottom"
             width={281}
             height={441}
-            className="absolute bottom-0 right-0 bloom-animation bloom-delay-2 w-[140px] h-[220px] opacity-70"
+            className="absolute bottom-0 right-0 bloom-animation bloom-delay-2 w-[100px] h-[157px] md:w-[140px] md:h-[220px] opacity-70"
           />
           <Navbar />
           {children}

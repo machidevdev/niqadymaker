@@ -122,7 +122,7 @@ export default function Home() {
           NIQADY MAKER
         </h1>
         <h2
-          className={`${roboto.className} font-thin text-xl lg:text-2xl mt-4`}
+          className={`${roboto.className} font-thin text-xl lg:text-2xl mt-4 text-center`}
         >
           A collection of 1111 unique NFTs on the Solana blockchain.
         </h2>
@@ -165,43 +165,49 @@ export default function Home() {
         >
           <Link
             href="/explore"
-            className="hover:text-primary transition-colors duration-300 justify-center flex nav-link"
+            className="hover:text-primary text-center transition-colors duration-300 justify-center flex nav-link"
           >
             BROWSE THE COLLECTION
           </Link>
         </motion.div>
 
         {/* Social Links */}
-        <motion.div className="flex justify-center space-x-6 mt-8">
+        <motion.div className="flex justify-center space-x-4 md:space-x-6 my-8">
           <Link
             href="https://x.com/NiqadyMaker"
             target="_blank"
-            className="opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="brightness-75 hover:brightness-100 transition-all duration-300 hover:scale-110"
           >
-            <FaXTwitter size={48} className="text-white" />
+            <FaXTwitter
+              size={36}
+              className="md:w-12 md:h-12 w-8 h-8 text-white"
+            />
           </Link>
           <Link
             href="https://telegram.org"
             target="_blank"
-            className="opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="brightness-75 hover:brightness-100 transition-all duration-300 hover:scale-110"
           >
-            <BiLogoTelegram size={48} className="text-primary" />
+            <BiLogoTelegram
+              size={36}
+              className="md:w-12 md:h-12 w-8 h-8 text-primary"
+            />
           </Link>
           <Link
             href={'https://magiceden.io/marketplace/niqady-maker'}
-            className="opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="brightness-75 hover:brightness-100 transition-all duration-300 hover:scale-110"
           >
             <Image
               src={'https://ord.cdn.magiceden.dev/static_resources/ME+logo.png'}
               alt="me"
               width={48}
               height={48}
-              className="rounded-lg"
+              className="rounded-lg md:w-12 md:h-12 w-8 h-8"
             />
           </Link>
           <Link
             href={'https://www.tensor.trade/trade/niqadio_'}
-            className="opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="brightness-75 hover:brightness-100 transition-all duration-300 hover:scale-110"
           >
             <Image
               src={
@@ -210,7 +216,7 @@ export default function Home() {
               alt="x"
               width={48}
               height={48}
-              className="rounded-lg"
+              className="rounded-lg md:w-12 md:h-12 w-8 h-8"
             />
           </Link>
         </motion.div>

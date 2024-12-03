@@ -34,7 +34,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-primary p-2"
+            className="lg:hidden text-primary p-2 relative z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
