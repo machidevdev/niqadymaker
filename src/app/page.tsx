@@ -167,7 +167,7 @@ export default function Home() {
             href="/explore"
             className="hover:text-primary text-center transition-colors duration-300 justify-center flex nav-link"
           >
-            BROWSE THE COLLECTION
+            Browse the first OG version of the collection
           </Link>
         </motion.div>
 
