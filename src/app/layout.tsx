@@ -2,7 +2,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Navbar from './Navbar';
-import { usePathname } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Niqady Maker',
