@@ -184,7 +184,7 @@ export default function Home() {
             />
           </Link>
           <Link
-            href="https://telegram.org"
+            href="https://t.me/+wW4qu4Xm6HkwNGIx"
             target="_blank"
             className="brightness-75 hover:brightness-100 transition-all duration-300 hover:scale-110"
           >

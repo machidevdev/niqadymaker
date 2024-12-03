@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { lancelot, roboto } from '../fonts';
+import Link from 'next/link';
 
 const getImagePath = (index: number) =>
   `https://res.cloudinary.com/dqhw3jubx/image/upload/niqady-collection/niqady${
@@ -39,10 +40,15 @@ export default function ExplorePage() {
         <div
           className={`${lancelot.className} text-primary  uppercase text-4xl w-full text-center flex justify-center`}
         >
-          Explore the collection
+          Explore the original collection
         </div>
         <div className="text-xl font-thin text-center my-4 ">
-          Take a look at the first generation of Niqady.
+          take a look at how your Niqady used to look like when it first was
+          minted. Do you prefer it to the current version?{' '}
+          <Link href={'/contact'} className="underline">
+            Contact us
+          </Link>{' '}
+          and we’ll revert it to the OG one.
         </div>
         <form
           onSubmit={handleSearch}

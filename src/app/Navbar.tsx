@@ -14,6 +14,7 @@ const Navbar = () => {
     { path: '/explore', label: 'EXPLORE' },
     { path: '/lore', label: 'LORE' },
     { path: '/custom', label: 'CUSTOM REQUEST' },
+    { path: '/contact', label: 'CONTACT' },
   ];
 
   return (
