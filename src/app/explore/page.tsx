@@ -1,130 +1,94 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { lancelot } from '../fonts';
-import { useInView } from 'react-intersection-observer';
-import Navbar from '../Navbar';
+import { useState } from 'react';
+import { lancelot, roboto } from '../fonts';
 
-// Function to generate the correct image path
 const getImagePath = (index: number) =>
   `https://res.cloudinary.com/dqhw3jubx/image/upload/niqady-collection/niqady${
     index + 1
   }`;
 
-// Simulate a larger collection with actual image paths
-const generateNFTs = () => {
-  return Array.from({ length: 1111 }, (_, i) => ({
-    id: i + 1,
-    imagePath: getImagePath(i),
-  }));
-};
-
 export default function ExplorePage() {
   const [searchId, setSearchId] = useState('');
-  const [displayedNFTs, setDisplayedNFTs] = useState(
-    generateNFTs().slice(0, 20)
-  );
-  const [ref, inView] = useInView({
-    threshold: 0,
-    triggerOnce: false,
-  });
-
-  useEffect(() => {
-    if (inView && displayedNFTs.length < 1111 && !searchId) {
-      loadMore();
-    }
-  }, [inView, displayedNFTs.length, searchId]);
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: 'easeOut',
-      },
-    },
-  };
+  const [searchResult, setSearchResult] = useState<{
+    id: number;
+    imagePath: string;
+  } | null>(null);
+  const [error, setError] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const id = parseInt(searchId);
+    setError('');
+
     if (id && id > 0 && id <= 1111) {
-      setDisplayedNFTs([generateNFTs()[id - 1]]);
+      setSearchResult({
+        id: id,
+        imagePath: getImagePath(id - 1),
+      });
+    } else {
+      setError('Please enter a valid ID between 1 and 1111');
+      setSearchResult(null);
     }
   };
 
-  const loadMore = () => {
-    setDisplayedNFTs((prev) => [
-      ...prev,
-      ...generateNFTs().slice(prev.length, prev.length + 20),
-    ]);
-  };
-
   return (
-    <div className="w-full min-h-screen relative z-20">
-      <Navbar />
-      <div className="container mx-auto px-6 py-8">
+    <div className="w-full h-screen relative z-20">
+      <div className="container mx-auto px-6 py-8 flex flex-col items-center ">
+        <div
+          className={`${lancelot.className} text-primary  uppercase text-4xl w-full text-center flex justify-center`}
+        >
+          Explore the collection
+        </div>
+        <div className="text-xl font-thin text-center my-4 ">
+          Take a look at the first generation of Niqady.
+        </div>
         <form
           onSubmit={handleSearch}
-          className="flex gap-4 justify-center mb-12"
+          className="flex flex-col items-center gap-4 w-full max-w-md mt-10"
         >
           <input
             type="number"
             min="1"
             max="1111"
-            placeholder="Search by Token ID..."
+            placeholder="Enter Token ID (1-1111)"
             value={searchId}
             onChange={(e) => setSearchId(e.target.value)}
-            className={`${lancelot.className} bg-transparent border-2 border-primary rounded-md px-4 py-2 w-full max-w-xs text-primary placeholder:text-primary/50 focus:outline-none`}
+            className={` bg-transparent border-2 border-primary rounded-md px-4 py-3 w-full text-primary placeholder:text-primary/50 focus:outline-none text-center text-xl`}
           />
           <button
             type="submit"
-            className={`${lancelot.className} px-6 py-2 bg-primary text-background rounded-md hover:bg-primary/80 transition-colors`}
+            className={`px-8 py-3 my-4 bg-primary text-background rounded-md hover:bg-primary/80 transition-colors text-xl`}
           >
             Search
           </button>
+          {error && <p className="text-red-500 mt-2">{error}</p>}
         </form>
 
-        <motion.div
-          className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-3 px-2"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          {displayedNFTs.map((nft) => (
-            <motion.div key={nft.id} variants={item} className="cursor-pointer">
-              <div className="relative group">
-                <Image
-                  src={nft.imagePath}
-                  alt={`Niqady #${nft.id}`}
-                  width={500}
-                  height={500}
-                  className="aspect-square opacity-50 hover:opacity-100 w-full rounded shadow-sm transition-all duration-[0.2s] ease-linear group-hover:translate-y-[-5px]"
-                />
-                <p
-                  className={`${lancelot.className} text-primary text-xl mt-2`}
-                >
-                  #{nft.id}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <div ref={ref} className="h-10 mt-8" />
+        {searchResult && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="mt-12 max-w-md w-full"
+          >
+            <div className="relative">
+              <Image
+                src={searchResult.imagePath}
+                alt={`Niqady #${searchResult.id}`}
+                width={500}
+                height={500}
+                className="w-full rounded-lg shadow-lg"
+              />
+              <p
+                className={`${roboto.className} text-primary text-2xl mt-4 text-center`}
+              >
+                # {searchResult.id}
+              </p>
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );
