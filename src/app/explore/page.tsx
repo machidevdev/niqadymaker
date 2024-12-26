@@ -6,9 +6,7 @@ import { lancelot, roboto } from '../fonts';
 import Link from 'next/link';
 
 const getImagePath = (index: number) =>
-  `https://res.cloudinary.com/dqhw3jubx/image/upload/niqady-collection/niqady${
-    index + 1
-  }`;
+  `https://res.cloudinary.com/dqhw3jubx/image/upload/niqady-collection/niqady${index}`;
 
 export default function ExplorePage() {
   const [searchId, setSearchId] = useState('');
