@@ -6,7 +6,9 @@ import { lancelot, roboto } from '../fonts';
 import Link from 'next/link';
 
 const getImagePath = (index: number) =>
-  `https://res.cloudinary.com/dqhw3jubx/image/upload/niqady-collection/niqady${index} +2`;
+  `https://res.cloudinary.com/dqhw3jubx/image/upload/niqady-collection/niqady${
+    index + 2
+  }`;
 
 export default function ExplorePage() {
   const [searchId, setSearchId] = useState('');
@@ -33,7 +35,7 @@ export default function ExplorePage() {
   };
 
   return (
-    <div className="w-full h-screen relative z-20">
+    <div className="w-full min-h-screen relative z-20">
       <div className="container mx-auto px-6 py-8 flex flex-col items-center ">
         <div
           className={`${lancelot.className} text-primary  uppercase text-4xl w-full text-center flex justify-center`}
