@@ -119,7 +119,7 @@ export default function Home() {
         <h1
           className={`${lancelot.className} text-7xl text-center w-full lg:text-8xl text-primary uppercase mt-20`}
         >
-          NIQADY MAKER
+          NIQADYS
         </h1>
         <h2
           className={`${roboto.className} font-thin text-xl lg:text-2xl mt-4 text-center`}
