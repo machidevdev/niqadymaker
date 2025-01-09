@@ -40,12 +40,12 @@ export default function ContactPage() {
                   <span>@0xFUXI - Creator</span>
                 </Link>
                 <Link
-                  href="https://x.com/NiqadyMaker"
+                  href="https://x.com/Niqadys"
                   target="_blank"
                   className="flex items-center space-x-4 p-4 rounded-lg border border-primary/20 hover:bg-primary/5 transition-colors"
                 >
                   <FaXTwitter size={24} className="text-white" />
-                  <span>@NiqadyMaker - Official Account</span>
+                  <span>@Niqadys - Official Account</span>
                 </Link>
                 <Link
                   href="https://t.me/+wW4qu4Xm6HkwNGIx"
