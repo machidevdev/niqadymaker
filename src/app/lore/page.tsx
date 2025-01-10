@@ -16,13 +16,13 @@ export default function LorePage() {
           <h1
             className={`${lancelot.className} text-4xl text-center text-primary mb-12`}
           >
-            The Story of Niqady Maker
+            The Story of Niqadys
           </h1>
 
           <div className={`${roboto.className} space-y-12 text-lg`}>
             <section className="space-y-6">
               <p className="leading-relaxed">
-                Niqady Maker was launched by Fuxi{' '}
+                Niqadys was launched by Fuxi{' '}
                 <Link
                   href="https://x.com/0xFUXI"
                   target="_blank"
@@ -44,7 +44,7 @@ export default function LorePage() {
                 inspired by his admiration for its charm and the cultural
                 significance it holds within Muslim traditions. The niqab
                 represents mystery and beauty, becoming a central theme that
-                sets Niqady Maker apart in the NFT space.
+                sets Niqadys apart in the NFT space.
               </p>
 
               <div className="relative h-[2px] w-full bg-primary/20 my-12">
@@ -52,7 +52,7 @@ export default function LorePage() {
               </div>
 
               <p className="leading-relaxed">
-                A key innovation of Niqady Maker is its on-chain customization
+                A key innovation of Niqadys is its on-chain customization
                 feature. Each NFT can be personalised by changing its onchain
                 metadata with a new artwork crafted to the holder&apos;s
                 preferences. This feature adds a dynamic and interactive element

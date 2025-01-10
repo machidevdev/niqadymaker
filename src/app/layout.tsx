@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Navbar from './Navbar';
 
 export const metadata: Metadata = {
-  title: 'Niqady Maker',
+  title: 'Niqadys',
   description: 'A collection of 1111 unique NFTs on the Solana blockchain.',
 };
 

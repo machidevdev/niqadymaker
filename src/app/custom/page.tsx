@@ -44,11 +44,11 @@ export default function CustomPage() {
                 </li>
                 <li>
                   <Link
-                    href="https://x.com/NiqadyMaker"
+                    href="https://x.com/Niqadys"
                     target="_blank"
                     className="hover:opacity-80"
                   >
-                    @NiqadyMaker on X
+                    @Niqadys on X
                   </Link>
                 </li>
                 <li>@FuxiGod on Telegram</li>
