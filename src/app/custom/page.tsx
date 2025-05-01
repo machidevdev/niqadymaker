@@ -58,12 +58,24 @@ export default function CustomPage() {
                 And share your vision by providing details such as:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>The color of the niqab</li>
-                <li>Eye color</li>
-                <li>Background type</li>
-                <li>Additional items or accessories to include</li>
-                <li>Overall inspiration or theme for the piece, if needed</li>
+                <li>Color of the Niqab</li>
+                <li>Details on the niqab</li>
+                <li>Eyes color</li>
+                <li>Hair color</li>
+                <li>Additional items</li>
+                <li>Background description</li>
               </ul>
+
+              <div className="mt-6 p-4 bg-primary/5 rounded-lg">
+                <p className="text-sm">
+                  <strong>NOTE:</strong> Please be specific with your custom
+                  piece description from the very beginning. Once we start
+                  working on a Niqady, it&apos;s difficult to make changes. We
+                  may decline further edits to the original request. So avoid
+                  comments like &quot;I know I said I wanted it like this, but
+                  now I want it like that.&quot;
+                </p>
+              </div>
             </section>
 
             <section className="space-y-4">
@@ -76,10 +88,11 @@ export default function CustomPage() {
                 rejected if:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>They are too controversial</li>
-                <li>They are too similar to an existing piece</li>
-                <li>They do not fit the ethos of the collection</li>
+                <li>Too controversial</li>
+                <li>Too similar to an existing piece</li>
+                <li>Don&apos;t fit the ethos of the collection</li>
               </ul>
+              <p className="mt-4">Pay the 1 $SOL to the provided address.</p>
             </section>
 
             <section className="space-y-4">
